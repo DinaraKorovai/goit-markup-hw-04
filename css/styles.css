@@ -196,8 +196,8 @@ address {
   color: var(--btn-blue-color);
 }
 .hero {
-  background-color: #2f303a;
-  /* width: 1600px */
+  background-image: url(../images/hero-bg.jpg);
+  width: 1600px;
 }
 
 .hero {
