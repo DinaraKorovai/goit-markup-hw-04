@@ -10,8 +10,8 @@
   --background-page-color: #f5f5f5;
   --icon-color: #AFB1B8;
   --footer-adres-color: rgba(255, 255, 255, 0.6);
-  --icon-footer-background: rgba(255, 255, 255, 0.1)
-  --header-border-line-color: #ececec;
+  --icon-footer-background: rgba(255, 255, 255, 0.1);
+  --header-border-color: #ececec;
   --cards-border-color: #eeeeee;
   /* --container-outline: 1px solid red; */
 }
@@ -96,7 +96,7 @@ address {
 
 /* ----------------HEADER---------------------------- */
 .header {
-  border-bottom: 1px solid var(--header-border-line-color);
+  border-bottom: 1px solid var(--header-border-color);
 }
 
 .container-header {
@@ -126,7 +126,7 @@ address {
   display: flex;
 }
 
-.header-link {
+.header-link.link {
   color: var(--background-black-color);
   font-weight: 500;
   line-height: 1.14;
@@ -165,6 +165,11 @@ address {
   color: var(--btn-blue-color);
 }
 
+.header-link.link:hover,
+.header-link.link:focus {
+  color: var(--btn-blue-color);
+}
+
 .header-contacts {
   display: flex;
   margin-left: auto;
@@ -177,11 +182,12 @@ address {
 .contacts-link.link {
   font-weight: 500;
   font-style: normal;
-  font-size: 14;
+  font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--accent-grey-color);
-  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .contacts-link.link:hover,
@@ -204,6 +210,10 @@ address {
   margin-right: auto;
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-bg.jpg);
   width: 1600px;
+  height: 600px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .hero {
@@ -305,9 +315,6 @@ border-radius: 4px;
   color: var(--accent-grey-color);
 }
 
-.hero-values-list .hero-values-item + .hero-values-item {
-  margin-left: 30px;
-}
 
 /*  ----------------------чем мы занимаемся------------------ */
 .work-title,
@@ -411,10 +418,11 @@ border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--icon-color)
 }
 
 .team-soc-icon {
-  fill: var(--icon-color);
+  fill: currentColor;
 }
 
 .team-soc-link:hover,
@@ -456,7 +464,7 @@ border-radius: 4px;
 
 .clients-section-link:hover,
 .clients-section-link:focus {
-  border-color: var(--icon-color);
+  border-color: var(--btn-blue-color);
   color: var(--btn-blue-color);
 }
 
@@ -506,6 +514,9 @@ border-radius: 4px;
 .portfolio-btn-item:focus {
   color: var(--background-white-color);
   background-color: var(--btn-blue-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+  0px 2px 1px rgba(0, 0, 0, 0.2);;
+}
 }
 
 .portfolio-button-item:not(:last-child) {
@@ -557,6 +568,19 @@ border-radius: 4px;
   color: var(--accent-grey-color);
 }
 
+.works-item-link {
+  display: block;
+}
+
+
+.works-item-link:hover,
+.works-item-link:focus {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+  0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+
+
 /* -------------------FOOTER---------------------  */
 
 /*-------------------- Лого в футере------------------------ */
@@ -583,12 +607,12 @@ border-radius: 4px;
 .footer-address-container {
   margin-right: 70px;
 }
-.address-link {
-  font-weight: 400;
-  font-style: normal;
+.address-link.link {
+  display: block;
   font-size: 14px;
   line-height: 1.71;
   color: var(--background-white-color);
+
 }
 .address-link:hover,
 .address-link:focus {
@@ -596,9 +620,7 @@ border-radius: 4px;
 }
 
 .footer-contacts-link {
-  font-weight: 400;
-  font-style: normal;
-  font-size: 14;
+  font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.02em;
   color: var(--accent-grey-color);
@@ -606,14 +628,15 @@ border-radius: 4px;
 
 .footer-contacts-link:hover,
 .footer-contacts-link:focus {
-  color: var(--btn-blue-color);
+  color: var(--background-btn-color);
 }
 
 .address-list {
+  display: block;
   margin-top: 20px;
 }
 
-.address-list .link {
+.address-list {
   color: var(--footer-adres-color);
   font-size: inherit;
   line-height: 1.71;
@@ -624,12 +647,12 @@ border-radius: 4px;
 }
 
 .address-list {
-  margin: bottom 60px;
+  margin: bottom 60px; 
 }
 
-.adress-list .link:hover,
-.adress-list .linkk:focus {
-  color: var(--accent-color);
+.adress-list:hover,
+.adress-list:focus {
+  color: var(--background-btn-color);
 }
 
 .address-list-item:not(:last-child) {
@@ -645,10 +668,12 @@ border-radius: 4px;
   color: var(--background-white-color);
   margin-bottom: 20px;
 }
+
 .footer-soc-list {
   display: flex;
   gap: 10px;
 }
+
 .footer-soc-link {
   width: 44px;
   height: 44px;
